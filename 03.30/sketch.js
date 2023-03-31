@@ -1,69 +1,31 @@
-// let particles = [];
-let numParticles = 100;
-let rWidth = 100;
-let rHeight = 200;
-let rOffset = 100;
+let rSize = 50; // size of the letter R
+let rColor; // color of the letter R
+let canvasWidth = 1000; // width of the canvas
+let canvasHeight = 1000; // height of the canvas
 
 function setup() {
-  createCanvas(1000, 1000);
-  
-  // Create initial particles
-  for (let i = 0; i < numParticles; i++) {
-    let p = new Particle();
-    particles.push(p);
-  }
+  createCanvas(canvasWidth, canvasHeight);
+  rColor = color(mouseX, mouseY, 250); // set the color of the letter R to a darker shade
 }
 
 function draw() {
-  background(0);
-  stroke(255, 0, 0);
-  strokeWeight(2);
+  // background(220);
+  // generate random coordinates for the center of the letter R
+  let rX = random(rSize/2, width - rSize/2);
+  let rY = random(rSize/2, height - rSize/2);
 
-  // Connect particles with lines
-  for (let i = 0; i < numParticles; i++) {
-    let p1 = particles[i];
-    let p2 = particles[(i+1)%numParticles];
-    line(p1.position.x, p1.position.y, p2.position.x, p2.position.y);
-  }
-
-  // Update and display particles
-  for (let i = 0; i < numParticles; i++) {
-    particles[i].update();
-    particles[i].display();
-  }
+  // draw the letter R at the random coordinates with the random color
+  drawR(rX, rY, rSize, rColor);
 }
 
-class Particle {
-  constructor() {
-    this.position = createVector(random(width), random(height));
-    this.velocity = createVector(random(-1, 1), random(-1, 1));
-    this.acceleration = createVector(0, 0);
-    this.radius = 10;
-    this.maxSpeed = 5;
-  }
-
-  update() {
-    // Update velocity and position
-    this.velocity.add(this.acceleration);
-    this.velocity.limit(this.maxSpeed);
-    this.position.add(this.velocity);
-
-    // Bounce off edges
-    if (this.position.x < 0 || this.position.x > width) {
-      this.velocity.x *= -1;
-    }
-    if (this.position.y < 0 || this.position.y > height) {
-      this.velocity.y *= -1;
-    }
-
-    // Reset acceleration
-    this.acceleration.mult(0);
-  }
-
-  display() {
-    // Display R particle
-    noStroke();
-    fill(255, 0, 0);
-    rect(this.position.x, this.position.y, this.radius, this.radius);
-  }
+function drawR(x, y, size, color) {
+  push(); // save current state of the drawing context
+  translate(x, y); // move to the center of the R
+  rotate(random(PI*2)); // rotate randomly
+  fill(color);
+  noStroke();
+  rect(-size/2, -size*2/5, size/3, size); // left vertical bar of R
+  ellipse(size/6, 0, size*2/5, size*2/5); // rounded part of R
+  rect(size/6, size/5, size*2/3, size/3); // right horizontal bar of R
+  pop(); // restore previous state of the drawing context
 }

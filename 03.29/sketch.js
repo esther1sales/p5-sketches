@@ -1,5 +1,6 @@
 let angle = 0;
 let letterSize = 50;
+let letterSize2 = 100;
 let swirlRadius = 200;
 
 function setup() {
@@ -18,3 +19,4 @@ function draw() {
   text("R", innerX, innerY);
   angle += 0.1;
 }
+
