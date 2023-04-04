@@ -27,3 +27,7 @@ function draw() {
   rotate(radians(distortion));
   translate(-x, -y);
 }
+function mousePressed() {
+  saveCanvas("day11", "png");
+}
+  

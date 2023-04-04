@@ -32,3 +32,7 @@ function draw() {
   noiseScale += 0.001;
   rSize = map(noise(noiseScale), 0, 1, 30, 70);
 }
+function mousePressed() {
+  saveCanvas("day13.1", "png");
+}
+  
