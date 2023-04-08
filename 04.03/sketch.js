@@ -28,7 +28,7 @@ function draw() {
   
   if (rPos.x < 0 || rPos.x > width || rPos.y < 0 || rPos.y > height) {
     rPos = createVector(random(width), random(height));
-    // rColor = color(random(255), random(255), random(255), 50);
+    rColor = color(random(255), random(255), random(255), 50);
   }
   
   rSize = map(noise(frameCount/100), 0, 1, 20, 80);
