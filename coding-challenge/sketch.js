@@ -13,7 +13,6 @@
 
 var grid;
 var next;
-
 var dA = 1;
 var dB = 0.5;
 var feed = 0.055;
