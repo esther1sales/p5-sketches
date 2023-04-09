@@ -1,81 +1,33 @@
-let x, y, vx, vy, colorR, colorG, colorB;
+let letterR = "R"; // the letter to display
 
 function setup() {
   createCanvas(1000, 1000);
-  x = width / 2;
-  y = height / 2;
-  vx = random(-5, 5);
-  vy = random(-5, 5);
-  colorR = random(255);
-  colorG = random(255);
-  colorB = random(255);
+  background(0);
 }
 
 function draw() {
-  // background(220);
-  textSize(500);
-  fill(colorR, colorG, colorB);
-  text("R", x, y);
+  let gray = random(0, 255);
+  stroke(gray);
+  fill(gray);
 
-  // Update positiolet font;
-let letterPaths;
-let angle = 0;
-let rotationSpeed = 0.02;
-let offset = 0;
-let offsetSpeed = 0.5;
-let radius = 200;
+  let size = random(50, 250);
+  let posX = random(size/2, width-size/2);
+  let posY = random(size/2, height-size/2);
 
-function preload() {
-  font = loadFont('assets/Roboto-Bold.ttf');
-}
-
-function setup() {
-  createCanvas(1000, 1000);
-  textFont(font);
-  textSize(600);
-  letterPaths = font.textToPoints("R", 200, 700, 500, {
-    sampleFactor: 0.5,
-    simplifyThreshold: 0
-  });
-}
-
-function draw() {
-  background(255);
-  translate(width / 2, height / 2);
-  noFill();
-  stroke(0);
-  strokeWeight(10);
-
-  // Draw letter paths
+  posX += random(-50, 50);
+  posY += random(-50, 50);
+  size += random(-50, 50);
+  let rotation = radians(random(-45, 45));
+  
+  // draw the "R" shape with noise
   push();
-  rotate(angle);
-  for (let i = 0; i < letterPaths.length; i++) {
-    let p = letterPaths[i];
-    let x = p.x + sin(offset + i) * radius;
-    let y = p.y + cos(offset + i) * radius;
-    point(x, y);
-  }
+  translate(posX, posY);
+  rotate(rotation);
+  textSize(size);
+  textAlign(CENTER, CENTER);
+  text(letterR, 0, 0);
   pop();
-
-  // Update variables
-  angle += rotationSpeed;
-  offset += offsetSpeed;
 }
-n
-  x += vx;
-  y += vy;
-
-  // Bounce off edges
-  if (x < 0 || x > width) {
-    vx *= -1;
-    colorR = random(255);
-    colorG = random(255);
-    colorB = random(255);
-  }
-  if (y < 0 || y > height) {
-    vy *= -1;
-    colorR = random(255);
-    colorG = random(255);
-    colorB = random(255);
-  }
+function mousePressed() {
+  saveCanvas("04.05", "png");
 }
