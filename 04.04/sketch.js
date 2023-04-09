@@ -1,5 +1,4 @@
 let noiseScale = 0.01;
-// let rSize = 50;
 let rPos;
 
 function setup() {
@@ -24,11 +23,11 @@ function draw() {
   rPos.x += map(noise(noiseVal), 0, 1, -2, 2);
   rPos.y += map(noise(noiseVal+10), 0, 1, -2, 2);
   
-  // wrap the position around the canvas edges
+  
   rPos.x = (rPos.x + width) % width;
   rPos.y = (rPos.y + height) % height;
   
-  // add some variation to noiseScale and rSize over time
+
   noiseScale += 0.001;
   rSize = map(noise(noiseScale), 0, 1, 30, 70);
 }

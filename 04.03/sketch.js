@@ -35,6 +35,6 @@ function draw() {
   rColor = color(map(noise(frameCount/200), 0, 1, 0, 255), map(noise(frameCount/300), 0, 1, 0, 255), map(noise(frameCount/400), 0, 1, 0, 255), 50);
 }
 function mousePressed() {
-  saveCanvas("day14", "png");
+  saveCanvas("04.03", "png");
 }
   

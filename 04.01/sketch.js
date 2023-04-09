@@ -57,3 +57,8 @@ function laplaceR(x, y) {
   sumR += r[x - 1][y + 1] * 0.05;
   return sumR;
 }
+
+function mousePressed() {
+  saveCanvas("04.01", "png");
+}
+  

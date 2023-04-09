@@ -9,7 +9,6 @@ function draw() {
   ellipse(mouseX, mouseY, 150, 150);
   fill(ferb,100,100);
   console.log (mouseX)
-  // stroke (mouseX,mouseY,)
   
 
 }

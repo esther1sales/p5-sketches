@@ -13,21 +13,17 @@ function setup() {
 
 // Draw the R
 function draw() {
-  // Clear the canvas
-//   background(255);
 
-  // Set the stroke color and weight
   stroke(rColor);
   strokeWeight(random (100));
 
-  // Draw the R
+
   line(x, y - 300, x, y);
   line(x, y - 300, x + 300, y - 300);
   line(x + 300, y - 300, x + 300, y - 150);
   line(x + 300, y - 150, x, y - 150);
   line(x, y - 150, x + 300, y);
 
-  // Bounce the R around the canvas
   x += speedX;
   y += speedY;
   if (x > 700 || x < 200) {
