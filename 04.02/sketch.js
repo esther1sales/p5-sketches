@@ -1,4 +1,3 @@
-//playing more with noise :)
 let xOff = 0;
 let yOff = 0;
 

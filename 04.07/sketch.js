@@ -11,20 +11,20 @@ function setup() {
 function draw() {
   // background(255);
 
-  // Scale the R
+
   scaleFactor = sin(frameCount * 0.02) * 2 + 2;
   textSize(rSize * scaleFactor);
 
-  // Rotate the R
+
   angle += 0.1;
 
-  // Change the color of the R
+
   let r = sin(frameCount * 0.01) * 128 + 128;
   let g = cos(frameCount * 0.02) * 128 + 128;
   let b = sin(frameCount * 0.03) * 128 + 128;
   fill(r, g, b);
 
-  // Draw the R
+
   push();
   translate(width / 2, height / 2);
   rotate(angle);

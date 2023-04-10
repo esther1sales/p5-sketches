@@ -1,4 +1,4 @@
-let letterR = "R"; // the letter to display
+let letterR = "R"; 
 
 function setup() {
   createCanvas(1000, 1000);
@@ -19,7 +19,6 @@ function draw() {
   size += random(-50, 50);
   let rotation = radians(random(-45, 45));
   
-  // draw the "R" shape with noise
   push();
   translate(posX, posY);
   rotate(rotation);

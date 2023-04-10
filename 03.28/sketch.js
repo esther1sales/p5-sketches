@@ -1,17 +1,16 @@
-// Declare variables
-let x = 200; // x-coordinate of the R
-let y = 500; // y-coordinate of the R
-let speedX = 5; // Speed of the animation in the x direction
-let speedY = 3; // Speed of the animation in the y direction
-let rColor; // Color of the R
 
-// Set up the canvas
+let x = 200;
+let y = 500; 
+let speedX = 5; 
+let speedY = 3; 
+let rColor; 
+
 function setup() {
   createCanvas(1000, 1000);
   rColor = color(random(255), random(255), random(255));
 }
 
-// Draw the R
+
 function draw() {
 
   stroke(rColor);
